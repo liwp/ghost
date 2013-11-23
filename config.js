@@ -46,6 +46,16 @@ config = {
     production: {
         url: 'http://blog.lauripesonen.com',
         mail: {},
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@lauripesonen.com',
+                    pass: '59jn7492z-d2'
+                }
+            }
+        },
         database: {
             client: 'mysql',
             connection: {
