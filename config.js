@@ -8,7 +8,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://my-ghost-blog.com',
+        url: 'http://blog.lauripesonen.com',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
@@ -44,7 +44,7 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://'+process.env.OPENSHIFT_APP_DNS,
+        url: 'http://blog.lauripesonen.com',
         mail: {},
         database: {
             client: 'mysql',
