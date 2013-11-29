@@ -34,8 +34,10 @@
 
             {{#if author}}
                 <section class="author">
-                    <h4>{{author.name}}</h4>
+                    <div class="author-pic" style="background-image:url({{author.image}})"></div>
+                    <h4><a href="mailto:{{author.email}}">{{author.name}}</a></h4>
                     <p>{{author.bio}}</p>
+		    <div class="clearfix"></div>
                 </section>
             {{/if}}
 
@@ -57,47 +59,15 @@
 
         </footer>
 
+        <section class="comment">
+            <div id="post_{{id}}_comments"></div>
+            <script>(function () {var c = document.getElementById('post_{{id}}_comments'),w = c.offsetWidth;c.innerHTML = '<div class="g-comments" data-href="{{@blog.url}}{{url}}" data-width="' + w + '" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"></div>';})();
+            </script>
+            <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
+            <noscript>Please enable JavaScript to view the <a href="https://plus.google.com/">comments powered by Google+.</a></noscript>
+        </section>
+
         {{/post}}
 
-        <hr />
-
-        <!-- Begin MailChimp Signup Form -->
-        <div id="optin">
-          <form action="http://lauripesonen.us3.list-manage.com/subscribe/post?u=16f9696f655437940890f7508&amp;id=5d3d9ac6a3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	        <h2>Get new blog posts in your email</h2>
-		    <input type="text" size="30" placeholder="Enter your name"
-                   name="FNAME" class="name" id="mce-FNAME"
-                   />
-	        <input type="email" size="30" placeholder="Enter your email"
-		           name="EMAIL" class="required email" id="mce-EMAIL"
-                   />
-	        <div id="mce-responses" class="clear">
-		      <div class="response" id="mce-error-response" style="display:none"></div>
-		      <div class="response" id="mce-success-response" style="display:none"></div>
-	        </div>
-            <input type="submit" value="Subscribe" name="subscribe"
-                   id="mc-embedded-subscribe" class="button" />
-          </form>
-        </div>
-        <!--End mc_embed_signup-->
-
-        <hr />
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-          var disqus_shortname = 'liwpblog'; // required: replace example with your forum shortname
-          var disqus_identifier = '{{post.id}}';
-
-          /* * * DON'T EDIT BELOW THIS LINE * * */
-          (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
     </article>
-
 </main>

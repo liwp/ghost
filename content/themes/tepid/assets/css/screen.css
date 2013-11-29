@@ -23,8 +23,8 @@
    ========================================================================== */
 
 @import url(normalize.css);
-
-
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300);
 /* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
    ========================================================================== */
@@ -87,8 +87,9 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Droid Serif', serif;
-    font-size: 2.0rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.8rem;
     line-height: 1.6em;
     color: #3A4145;
 }
@@ -100,8 +101,7 @@ body {
 }
 
 ::selection {
-    color: #222;
-    background: #D6EDFF;
+    background: rgba(244,170,105,0.2);
     text-shadow: none;
 }
 
@@ -110,7 +110,8 @@ h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
 }
 
 h1 {
@@ -149,7 +150,7 @@ a {
 }
 
 a:hover {
-    color: #57A3E8;
+    color: rgb(206,114,102);
 }
 
 h1 a, h2 a, h3 a,
@@ -181,7 +182,7 @@ blockquote {
     box-sizing: border-box;
     margin: 1.6em 0 1.6em -2.2em;
     padding: 0 0 0 1.6em;
-    border-left: #4a4a4a 0.4em solid;
+    border-left: #CE7266 0.4em solid;
 }
 
 blockquote p {
@@ -235,33 +236,10 @@ code, tt {
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.85em;
     white-space: pre;
-    border: 1px solid #E3EDF3;
-    background: #F7FAFB;
-    border-radius: 2px;
-}
-
-pre {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 1.6em 0;
-    border: 1px solid #E3EDF3;
-    width: 100%;
-    padding: 10px;
-    font-family: Inconsolata, monospace, sans-serif;
-    font-size: 0.9em;
-    white-space: pre;
-    overflow: auto;
-    background: #F7FAFB;
+    border: 1px solid #222;
+    background: #23241f;
+    color: #e6db74;
     border-radius: 3px;
-}
-
-pre code, tt {
-    font-size: inherit;
-    white-space: -moz-pre-wrap;
-    white-space: pre-wrap;
-    background: transparent;
-    border: none;
-    padding: 0;
 }
 
 kbd {
@@ -325,6 +303,9 @@ table.plain {
     }
 }
 
+strong {
+   font-weight: 400;
+}
 
 /* ==========================================================================
    3. Utilities - These things get used a lot
@@ -367,6 +348,13 @@ table.plain {
     color: #fff;
     background: #303538 no-repeat center center;
     background-size: cover;
+		border-bottom: 1px solid #aaa;
+		background-position: center center;
+		-moz-box-shadow: 0 35px 55px 10px rgba(35,25,25,0.05),0 8px 10px 6px rgba(75,50,50,0.1);
+		-webkit-box-shadow: 0 35px 55px 10px rgba(35,25,25,0.05),0 8px 10px 6px rgba(75,50,50,0.1);
+		box-shadow: 0 35px 55px 10px rgba(35,25,25,0.05),0 8px 10px 6px rgba(75,50,50,0.1);
+		opacity: 0.95;
+		text-shadow:0 0 5px rgba(0,0,0,0.5);
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
@@ -376,7 +364,37 @@ table.plain {
     width: auto;
     margin: 0 auto;
     line-height: 0;
+    border-radius: 100%;
+		overflow: hidden;
+		border: 5px solid #fff;
+		background: #fff;
+		-moz-transition: all 0.3s ease;
+
+		/* WebKit */
+
+		-webkit-transition: all 0.3s ease;
+
+		/* Opera */
+
+		-o-transition: all 0.3s ease;
+
+		/*Standar*/
+		transition: all 0.3s ease;
+
 }
+
+#blog-logo img:hover{
+	opacity: 1;
+	/* Firefox */
+	-moz-transform: scale(1.2) rotate(360deg);
+	/* WebKit */
+	-webkit-transform: scale(1.2) rotate(360deg);
+	/* Opera */
+	-o-transform: scale(1.2) rotate(360deg);
+	/* Standard */
+	transform: scale(1.2) rotate(360deg);
+}
+
 
 #back {
     color: rgba(0,0,0,0.2);
@@ -392,6 +410,7 @@ table.plain {
     margin: 10px 0 10px 0;
     font-size: 5rem;
     letter-spacing: -1px;
+    font-weight: 400;
 }
 
 .blog-description {
@@ -399,7 +418,7 @@ table.plain {
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
-    font-family: 'Droid Serif', serif;
+    font-family: 'Roboto', sans-serif;
     letter-spacing: 0;
 }
 
@@ -410,7 +429,7 @@ table.plain {
     max-width: 700px;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: rgba(88,84,72,0.3) 1px solid;
     word-break: break-word;
     hyphens: auto;
 }
@@ -422,7 +441,7 @@ table.plain {
     content: "";
     width: 7px;
     height: 7px;
-    border: #E7EEF2 1px solid;
+    border: rgba(88,84,72,0.3) 1px solid;
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -436,16 +455,26 @@ table.plain {
 
 .post-title {
     margin:0;
+    text-align: center;
 }
 
 .post-title a {
     text-decoration: none;
 }
 
+.post-image {
+    text-align: center;
+}
+
+.post-image img{
+    max-width: 100%;
+}
+
 .post-excerpt p {
     margin: 1.6rem 0 0 0;
     font-size: 0.9em;
     line-height: 1.6em;
+    text-align: justify;
 }
 
 .post-meta {
@@ -453,7 +482,9 @@ table.plain {
     margin: 0 0 5px 0;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
-    color: #9EABB3;
+    color: rgba(206,114,102,0.7);
+    text-align: center;
+    width:100%;
 }
 
 .post-meta a {
@@ -524,9 +555,16 @@ table.plain {
     display: none;
 }
 
+.post-header {
+    text-align: center;
+}
 /* Insert some mad padding up in the header for better spacing */
 .post-template .post-header {
     padding: 60px 0;
+}
+
+.post-content {
+    text-align: justify;
 }
 
 /* Keep large images within the bounds of the post-width */
@@ -539,7 +577,7 @@ table.plain {
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 0 0;
+    margin: 4rem 0 2rem 0;
     padding: 4rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
@@ -547,6 +585,10 @@ table.plain {
 .post-footer h4 {
     font-size: 1.8rem;
     margin: 0;
+    font-weight: 400;
+}
+.post-footer h4 a {
+	  text-decoration: none;
 }
 
 .post-footer p {
@@ -558,8 +600,17 @@ table.plain {
 /* Create some space to the right for the share links */
 .post-footer .author {
     margin-right: 180px;
+    text-align: justify;
 }
+.post-footer .author .author-pic {
+	background-size: cover;
+	border-radius: 100%;
+	margin: 0 10px 5px 0;
+	float: left;
+	width: 100px;
+	height: 100px;
 
+}
 /* Drop the share links in the space to the right.
    Doing it like this means it's easier for the author bio
    to be flexible at smaller screen sizes while the share
@@ -612,12 +663,12 @@ table.plain {
     margin: 4rem auto;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
-    color: #9EABB3;
+    color: rgb(206,114,102);
     text-align: center;
 }
 
 .pagination a {
-    color: #9EABB3;
+    color: #585448;
 }
 
 /* Push the previous/next links out to the left/right */
@@ -626,7 +677,7 @@ table.plain {
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #EBF2F6 2px solid;
+    border: rgba(244,170,105,0.3) 2px solid;
     text-decoration: none;
     border-radius: 30px;
     transition: border ease 0.3s;
@@ -647,7 +698,7 @@ table.plain {
 
 .older-posts:hover,
 .newer-posts:hover {
-    border-color: #9EABB3;
+    border-color: #F4AA69;
 }
 
 
@@ -656,25 +707,25 @@ table.plain {
    ========================================================================== */
 
 .site-footer {
-    position: relative;
-    margin: 8rem 0 0 0;
-    padding: 4rem 0;
-    border-top: #EBF2F6 1px solid;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.7em;
-    color: #BBC7CC;
-    text-align: center;
-    background: #F7FAFB;
+	position: relative;
+	margin: 8rem 0 0 0;
+	padding: 4rem 0;
+	border-top: #CE7266 1px solid;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.3rem;
+	line-height: 1.7em;
+	color: #585448;
+	text-align: center;
+	background: rgba(239,190,97,0.03);
 }
 
 .site-footer a {
-    color: #BBC7CC;
-    text-decoration: underline;
+	color: #CE7266;
+	text-decoration: none;
 }
 
 .site-footer a:hover {
-    color: #50585D;
+    color: #585448;
 }
 
 .poweredby .icon-ghost {
@@ -699,7 +750,7 @@ table.plain {
     top: -14px;
     left: 50%;
     margin-left: -15px;
-    border: #EBF2F6 1px solid;
+    border: #EFBE61 1px solid;
     text-align: center;
     line-height: 2.4rem;
     border-radius: 50px;
@@ -709,7 +760,7 @@ table.plain {
 
 /* The RSS icon, inserted via icon font */
 .subscribe:before {
-    color: #D2DEE3;
+    color: #F4AA69;
     font-size: 10px;
     position: absolute;
     top: 2px;
@@ -932,35 +983,20 @@ table.plain {
 
 }
 
-/* Mailchimp optin form */
-#optin {
-    background: #fff url(/shared/img/shadow.png) repeat-x top;
-    padding: 20px 15px;
-    float: right;
-}
-
-#optin input {
-	margin-bottom: 10px;
-}
-
-#optin input.email {
-    background: #fff url(/shared/img/email.png) no-repeat 10px center;
-    padding-left: 35px;
-}
-
-#optin input.name {
-    background: #fff url(/shared/img/name.png) no-repeat 10px center;
-    padding-left: 35px;
-}
-
-#optin input[type="submit"] {
-	background: #f6640e;
-	color: #fff;
-	font-size: 18px;
-	padding: 8px 0;
-}
-
 /* ==========================================================================
    End of file. Media queries should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+.clearfix { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE-mac */
