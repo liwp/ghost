@@ -45,7 +45,6 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://blog.lauripesonen.com',
-        mail: {},
         mail: {
             transport: 'SMTP',
             options: {
@@ -59,12 +58,12 @@ config = {
         database: {
             client: 'mysql',
             connection: {
-  			  host: process.env.OPENSHIFT_MYSQL_DB_HOST,
-			  port: process.env.OPENSHIFT_MYSQL_DB_PORT,
-  			  user: process.env.OPENSHIFT_MYSQL_DB_USERNAME,
-  			  password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
-  			  database: process.env.OPENSHIFT_APP_NAME,
-  			  charset: 'utf8'
+                host: process.env.OPENSHIFT_MYSQL_DB_HOST,
+                port: process.env.OPENSHIFT_MYSQL_DB_PORT,
+                user: process.env.OPENSHIFT_MYSQL_DB_USERNAME,
+                password: process.env.OPENSHIFT_MYSQL_DB_PASSWORD,
+                database: process.env.OPENSHIFT_APP_NAME,
+                charset: 'utf8'
             },
             debug: false
         },
