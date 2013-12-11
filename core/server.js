@@ -23,6 +23,11 @@ var express     = require('express'),
     ghost = new Ghost();
 
 // ##Custom Middleware
+// Setup NodeTime - https://nodetime.com/
+require('nodetime').profile({
+    accountKey: 'e29021736f4dcc01ff156831db5a50ea170251df',
+    appName: 'Ghost Blog'
+});
 
 // ### Auth Middleware
 // Authenticate a request by redirecting to login if not logged in.
